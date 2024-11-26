@@ -1,0 +1,15 @@
+{
+  "name": "cloud-flex",
+  "version": "1.0.0",
+  "description": "Simple landing page",
+  "source": "index.html",
+  "scripts": {
+    "sass:w": "sass --watch styles:css"
+  },
+  "author": "Alex Suvorov",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.2",
+    "sass": "^1.81.0"
+  }
+}

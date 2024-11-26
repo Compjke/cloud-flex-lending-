@@ -1,0 +1,7 @@
+@use 'variables' as v;
+$main-font: 'Oswald', sans-serif;
+
+body {
+	font-family: $main-font;
+	background-color: v.$main-bg-color;
+}
