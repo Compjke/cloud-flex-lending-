@@ -4,7 +4,9 @@
   "description": "Simple landing page",
   "source": "index.html",
   "scripts": {
-    "sass:w": "sass --watch styles:css"
+    "sass:w": "sass --watch styles:css",
+    "parcel:watch": "parcel serve --dist-dir public",
+    "parcel:build": "parcel serve --dist-dir build --public-url ./"
   },
   "author": "Alex Suvorov",
   "license": "ISC",

@@ -1,0 +1,22 @@
+@mixin flex($d: row, $j: start, $a: start, $w: nowrap, $cg: 0, $rg: 0) {
+	display: flex;
+	flex-direction: $d;
+	justify-content: $j;
+	align-items: $a;
+	flex-wrap: $w;
+	gap: $rg $cg;
+}
+
+@mixin hover {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			@content;
+		}
+	}
+}

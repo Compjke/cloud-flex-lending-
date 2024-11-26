@@ -1,0 +1,93 @@
+@use '../variables' as v;
+@use '../mixins' as mix;
+@use '../placeholders';
+@use 'sass:color';
+@use '../media' as media;
+.header {
+	// padding: 10px 12px 10px 52px;
+	background-color: color.adjust(v.$white-color, $alpha: -0.8);
+	border-bottom: v.$border-divider;
+
+	.nav {
+		@include mix.flex(row, start, center);
+		height: 52px;
+		color: v.$white-color;
+		&__title {
+			height: 100%;
+			border-right: v.$border-divider;
+			@include mix.flex(row, center, center, nowrap, 10px, 10px);
+			padding-inline: 52px;
+
+			&-link {
+				position: relative;
+				font-size: 25px;
+				font-weight: 500;
+				span {
+					font-weight: 700;
+					margin-left: 5px;
+				}
+
+				&::after {
+					@extend %hover-el-link;
+				}
+			}
+		}
+
+		&__links {
+			flex: 1 1 auto;
+			padding-left: min(100px, 5vw);
+			@include mix.flex(row, start, center, nowrap, min(100px, 5vw));
+			@include media.tablet {
+			}
+			.list {
+				&__link {
+					font-size: 22px;
+					position: relative;
+					&::after {
+						@extend %hover-el-link;
+					}
+				}
+			}
+		}
+
+		.covid {
+			height: 100%;
+			padding-inline: 30px;
+			border : {
+				right: v.$border-divider;
+				left: v.$border-divider;
+			}
+			@include mix.flex(row, center, center);
+			@include media.tablet {
+			}
+
+			&__link {
+				font-size: 16px;
+				font-weight: 700;
+				position: relative;
+				&::after {
+					@extend %hover-el-link;
+				}
+			}
+		}
+
+		.globus {
+			height: 100%;
+			width: 90px;
+			@include mix.flex(row, center, center);
+
+			&__link {
+				&-icon {
+					width: 27px;
+					height: 28px;
+					transition: all 1s ease;
+
+					&:hover {
+						scale: 1.1;
+						stroke: rgba(0, 0, 255, 0.638);
+					}
+				}
+			}
+		}
+	}
+}

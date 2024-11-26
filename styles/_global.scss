@@ -1,7 +1,12 @@
 @use 'variables' as v;
-$main-font: 'Oswald', sans-serif;
 
 body {
-	font-family: $main-font;
+	font-family: v.$main-font;
 	background-color: v.$main-bg-color;
+}
+
+.container {
+	max-width: v.$container-width;
+	margin: 0 auto;
+	
 }
