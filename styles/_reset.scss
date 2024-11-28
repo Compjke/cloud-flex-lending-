@@ -133,6 +133,12 @@ svg * {
 	transition-property: fill, stroke;
 }
 
+button {
+	background: transparent;
+	border: none;
+	padding: 0;
+}
+
 /**
    Удаляем все анимации и переходы для людей,
    которые предпочитают их не использовать

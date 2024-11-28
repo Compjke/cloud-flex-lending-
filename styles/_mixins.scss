@@ -7,6 +7,36 @@
 	gap: $rg $cg;
 }
 
+@mixin font($size: 1rem, $weight: 400, $color: inherit, $style: normal) {
+	font: {
+		size: $size;
+		weight: $weight;
+		style: $style;
+	}
+	color: $color;
+}
+
+@mixin position(
+	$type: relative,
+	$zIndex: 1,
+	$inset: -1,
+	$top-or-bottom: top,
+	$left-or-right: left,
+	$val1: 0,
+	$val2: 0
+) {
+	position: $type;
+	z-index: $zIndex;
+
+	@if $inset > -1 {
+		inset: $inset;
+	}
+	@else{
+		#{$top-or-bottom}:$val1;
+		#{$left-or-right}:$val2;
+	}
+}
+
 @mixin hover {
 	@media (hover: hover) {
 		&:hover {
