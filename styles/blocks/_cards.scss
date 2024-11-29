@@ -1,0 +1,37 @@
+@use 'sass:color';
+@use '../variables' as v;
+@use '../mixins' as mix;
+@use '../media' as media;
+// $d: row, $j: start, $a: start, $w: nowrap, $cg: 0, $rg: 0
+.item {
+	border: 1px solid #4444;
+	background-color: color.adjust(v.$white-color, $alpha: -0.8);
+	padding: 20px 15px;
+	border-radius: 20px;
+	@include mix.flex(column, start, center, nowrap, 0, 10px);
+	text-align: center;
+	transition-duration: 0.3s;
+	cursor: pointer;
+	@include mix.hover {
+		.item__icon {
+			fill: v.$white-color;
+		}
+		color: #fff;
+		background-color: #4444;
+		box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+	}
+	&__icon {
+		transition-duration: 0.3s;
+		max-width: 30%;
+		aspect-ratio: 1;
+		object-fit: cover;
+		// margin-bottom: 10px;
+	}
+	&__title {
+		@include mix.font(18px, 500);
+	}
+	&__text {
+		@include mix.font(16px, 300);
+		font-family: 'Courier New', Courier, monospace;
+	}
+}

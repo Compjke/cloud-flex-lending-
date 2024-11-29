@@ -1,0 +1,26 @@
+@use '../mixins' as mix;
+@use '../variables' as var;
+@use '../media' as media;
+.work-section {
+	@include media.tablet-above {
+		padding-top: 60px;
+		padding-bottom: 180px;
+	}
+	padding-block: 30px;
+}
+
+.work {
+	&__title {
+		@include mix.font(clamp(40px, 4.1vw, 60px), 400, var.$white-color);
+		text-align: center;
+	}
+
+	&__items {
+		max-width: 70%;
+		margin: 0 auto;
+		margin-top: 80px;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		gap: 70px 200px;
+	}
+}

@@ -6,6 +6,7 @@
 
 .hero {
 	max-width: 87.5%;
+	padding-bottom: 80px;
 	position: relative;
 	max-height: 830px;
 	margin: 0 auto;
@@ -16,8 +17,7 @@
 		background-position: 50% 40%;
 	}
 	@include media.mobile {
-		background-position: 50%;
-		background-size: cover;
+		background-position: 50% 25%;
 		max-width: 100%;
 		text-align: center;
 	}
@@ -40,7 +40,7 @@
 			border-radius: 45px;
 			background-color: v.$color-dark;
 			transition-duration: 0.3s;
-			@include mix.position(absolute, 1, -1, bottom, right, 15px, 17%);
+			@include mix.position(absolute, 1, -1, bottom, right, 15px, -5%);
 			@include mix.font(clamp(1rem, 1.95vw, 28px), 500, v.$white-color);
 			@include mix.hover {
 				background-color: v.$white-color;
@@ -76,6 +76,12 @@
 				background-color: #fff;
 				top: 50%;
 			}
+		}
+		@media screen and (max-width: 576px) {
+			max-width: 90%;
+		}
+		@include media.mobile-s {
+			max-width: 100%;
 		}
 		@include media.mobile-above {
 			height: 60px;
