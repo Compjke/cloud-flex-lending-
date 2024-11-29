@@ -1,0 +1,152 @@
+@use '../variables' as var;
+@use '../mixins' as mixin;
+@use '../media' as media;
+.about-section {
+	padding-top: 50px;
+	@include media.mobile-above {
+		padding-top: 140px;
+	}
+}
+
+.about {
+	@include mixin.flex(column, start, center, nowrap, 0, 130px);
+	color: var.$white-color;
+	.title {
+		@include mixin.font(clamp(35px, 3.1vw, 45px), 400);
+	}
+	.desqr {
+		@include mixin.font(clamp(16px, 1.4vw, 20px), 300);
+		line-height: 1.4;
+		margin-top: 10px;
+	}
+	@include media.mobile {
+		row-gap: 80px;
+	}
+	&__quality {
+		width: 100%;
+		height: 400px;
+		padding-left: 15px;
+		background: url(../../assets/img/desktop_alpha.webp) right/contain no-repeat;
+		&-desqr {
+			@include media.mobile-above {
+				max-width: 590px;
+			}
+		}
+		@include media.custom(1240) {
+			background: linear-gradient(
+					175deg,
+					rgba(103, 143, 242, 1) 0%,
+					rgba(103, 143, 242, 0) 88%
+				),
+				url(../../assets/img/desktop_alpha.webp) 90% 45%/500px no-repeat;
+		}
+
+		@include media.mobile {
+			background: url(../../assets/img/desktop_alpha.webp) 99% 100%/450px
+				no-repeat;
+		}
+		@include media.mobile-s {
+			background-position: 150px 120%;
+		}
+	}
+	&__touch {
+		position: relative;
+		width: 100%;
+		height: 500px;
+		padding-left: 15px;
+		@include mixin.flex(column, end, end, nowrap, 0, 0);
+		@include media.mobile {
+			justify-content: start;
+			height: 400px;
+		}
+		@include media.mobile-s {
+			height: 350px;
+		}
+		&::before {
+			@include mixin.position(absolute, -1, -1, top, left, 100px, -200px);
+			content: '';
+			width: 100%;
+			height: 100%;
+			background: url(../../assets/img/phone_alpha-croped.png) 0 0 / contain
+				no-repeat;
+			rotate: 15deg;
+
+			@include media.tablet {
+				@include mixin.position(absolute, -1, -1, top, left, 0, -238px);
+			}
+			@include media.mobile {
+				@include mixin.position(absolute, -1, -1, top, left, 29%, -238px);
+				rotate: 65deg;
+				background-size: 70%;
+			}
+			// @include media.mobile-s {
+			// 	background-size: 100%;
+			// 	background-position: 10px 10px;
+			// }
+		}
+		&-desqr {
+			text-align: right;
+
+			@include media.mobile-above {
+				max-width: 480px;
+			}
+		}
+	}
+
+	&__aproach {
+		width: 100%;
+		height: 800px;
+		padding-left: 15px;
+		background: url(../../assets/img/cactus_alpha.webp) 90% 100% / contain
+			no-repeat;
+
+		&-title {
+			margin-top: 12rem;
+		}
+		@include media.custom(992) {
+			&-desqr {
+				margin-top: 10rem;
+			}
+			background-position-x: 99%;
+		}
+
+		@include media.mobile {
+			max-height: 630px;
+			&-title {
+				margin-top: 0;
+			}
+			background-size: 300px;
+		}
+		@include media.mobile-s {
+			max-height: 500px;
+			&-title {
+				margin-top: 0;
+			}
+			background-size: 200px;
+		}
+	}
+}
+
+// .about {
+// 	@include mixin.flex(column, start, center, nowrap, 0, 130px);
+// 	color: var.$white-color;
+// 	.block {
+// 		@include mixin.flex(row, center, center, nowrap, 0);
+// 		&:nth-child(even) {
+// 			flex-direction: row-reverse;
+// 		}
+
+// 		&__text {
+// 			flex-basis: 590px;
+// 			h3 {
+// 				@include mixin.font(clamp(30px, 3.1vw, 45px), 400);
+// 			}
+// 			p {
+// 				@include mixin.font(clamp(16px, 1.4vw, 20px), 300);
+// 			}
+// 		}
+// 		&__img {
+// 			margin-top: 3rem;
+// 		}
+// 	}
+// }

@@ -140,6 +140,10 @@ button {
   padding: 0;
 }
 
+hr {
+  margin: 0;
+}
+
 /**
    Удаляем все анимации и переходы для людей,
    которые предпочитают их не использовать
@@ -161,6 +165,10 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   padding-inline: 15px;
+}
+
+.divider {
+  border-width: 1.5px;
 }
 
 .header .nav__title-link::after, .header .nav__links .list__link::after, .header .nav .covid__link::after {
@@ -573,6 +581,165 @@ body {
   font-style: normal;
   color: inherit;
   font-family: "Courier New", Courier, monospace;
+}
+
+.about-section {
+  padding-top: 50px;
+}
+@media screen and (min-width: 768px) {
+  .about-section {
+    padding-top: 140px;
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 130px 0;
+  color: #fff;
+}
+.about .title {
+  font-size: clamp(35px, 3.1vw, 45px);
+  font-weight: 400;
+  font-style: normal;
+  color: inherit;
+}
+.about .desqr {
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 300;
+  font-style: normal;
+  color: inherit;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+@media screen and (max-width: 768px) {
+  .about {
+    row-gap: 80px;
+  }
+}
+.about__quality {
+  width: 100%;
+  height: 400px;
+  padding-left: 15px;
+  background: url(../../assets/img/desktop_alpha.webp) right/contain no-repeat;
+}
+@media screen and (min-width: 768px) {
+  .about__quality-desqr {
+    max-width: 590px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .about__quality {
+    background: linear-gradient(175deg, rgb(103, 143, 242) 0%, rgba(103, 143, 242, 0) 88%), url(../../assets/img/desktop_alpha.webp) 90% 45%/500px no-repeat;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about__quality {
+    background: url(../../assets/img/desktop_alpha.webp) 99% 100%/450px no-repeat;
+  }
+}
+@media screen and (max-width: 480px) {
+  .about__quality {
+    background-position: 150px 120%;
+  }
+}
+.about__touch {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  flex-wrap: nowrap;
+  gap: 0 0;
+}
+@media screen and (max-width: 768px) {
+  .about__touch {
+    justify-content: start;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .about__touch {
+    height: 350px;
+  }
+}
+.about__touch::before {
+  position: absolute;
+  z-index: -1;
+  top: 100px;
+  left: -200px;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/img/phone_alpha-croped.png) 0 0/contain no-repeat;
+  rotate: 15deg;
+}
+@media screen and (max-width: 1024px) {
+  .about__touch::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -238px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about__touch::before {
+    position: absolute;
+    z-index: -1;
+    top: 29%;
+    left: -238px;
+    rotate: 65deg;
+    background-size: 70%;
+  }
+}
+.about__touch-desqr {
+  text-align: right;
+}
+@media screen and (min-width: 768px) {
+  .about__touch-desqr {
+    max-width: 480px;
+  }
+}
+.about__aproach {
+  width: 100%;
+  height: 800px;
+  padding-left: 15px;
+  background: url(../../assets/img/cactus_alpha.webp) 90% 100%/contain no-repeat;
+}
+.about__aproach-title {
+  margin-top: 12rem;
+}
+@media screen and (max-width: 992px) {
+  .about__aproach {
+    background-position-x: 99%;
+  }
+  .about__aproach-desqr {
+    margin-top: 10rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about__aproach {
+    max-height: 630px;
+    background-size: 300px;
+  }
+  .about__aproach-title {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .about__aproach {
+    max-height: 500px;
+    background-size: 200px;
+  }
+  .about__aproach-title {
+    margin-top: 0;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
