@@ -1,0 +1,79 @@
+@use '../variables' as var;
+@use '../mixins' as mixin;
+@use '../media' as media;
+@use 'sass:color';
+
+%cloud-template {
+	width: 50%;
+	height: 240px;
+	background: url('../../assets/img/cloud_alpha.png') center/contain no-repeat;
+
+	@include media.mobile {
+		width: 60%;
+	}
+}
+
+.form-section {
+	position: relative;
+	overflow: hidden;
+	padding: 100px 0;
+	@include media.mobile {
+		padding: 140px 0;
+	}
+	&__bg {
+		@extend %cloud-template;
+	}
+
+	.left {
+		@include mixin.position(absolute, 1, -1, top, left, 0, -27%);
+		@include media.mobile {
+			top: -8%;
+		}
+	}
+	.right {
+		@include mixin.position(absolute, 1, -1, bottom, right, 0, -27%);
+		@include media.mobile {
+			bottom: -10%;
+		}
+	}
+}
+
+.form {
+	@include mixin.flex(column, center, center, nowrap, 0, 25px);
+	@include mixin.font(clamp(18px, 2.08vw, 30px));
+	max-width: 45%;
+	@include media.mobile {
+		max-width: 80%;
+	}
+	@include media.mobile-s {
+		max-width: 100%;
+	}
+	margin: 0 auto;
+	&__title {
+		text-align: center;
+		@include mixin.font(clamp(36px, 1.6vw, 32px));
+	}
+	&__input,
+	&__btn {
+		border: none;
+		width: 100%;
+		border-radius: 20px;
+		padding: 10px;
+		outline: none;
+		border: 3px solid #ffffff;
+	}
+	&__input:focus {
+		border-color: #00d2c4;
+		box-shadow: 0px 4px 10px 10px rgba(255, 255, 255, 0.5);
+	}
+	&__btn {
+		border: none;
+		color: var.$white-color;
+		background-color: var.$color-dark;
+		transition-duration: 0.3s;
+		cursor: pointer;
+		@include mixin.hover {
+			background-color: color.adjust(var.$color-dark, $alpha: -0.2);
+		}
+	}
+}
