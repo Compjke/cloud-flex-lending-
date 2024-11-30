@@ -583,6 +583,94 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+.exp-card {
+  color: #fff;
+  width: 325px;
+  height: 295px;
+  position: relative;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0 0;
+  overflow: hidden;
+}
+@media (hover: hover) {
+  .exp-card:hover {
+    scale: 1.05;
+    background-color: rgba(68, 68, 68, 0.2666666667);
+    box-shadow: 0 20px 30px 10px rgba(0, 0, 0, 0.3), inset 0 -5px 70px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+@media (hover: none) {
+  .exp-card:active {
+    scale: 1.05;
+    background-color: rgba(68, 68, 68, 0.2666666667);
+    box-shadow: 0 20px 30px 10px rgba(0, 0, 0, 0.3), inset 0 -5px 70px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+.exp-card__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0 0;
+  font-size: clamp(23px, 1.6vw, 22px);
+  font-weight: 400;
+  font-style: normal;
+  color: inherit;
+  flex: 1 0 auto;
+}
+.exp-card__preview {
+  height: 220px;
+}
+@media screen and (max-width: 480px) {
+  .exp-card__preview {
+    align-self: stretch;
+  }
+}
+.exp-card__btn {
+  position: absolute;
+  z-index: 1;
+  bottom: -20px;
+  left: -30px;
+  width: 120px;
+  height: 90px;
+  border-radius: 20px;
+  background-color: #fff;
+  rotate: z 7deg;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .exp-card__btn:hover {
+    scale: 1.3;
+  }
+  .exp-card__btn:hover svg {
+    fill: rgb(55, 0, 255);
+  }
+}
+@media (hover: none) {
+  .exp-card__btn:active {
+    scale: 1.3;
+  }
+  .exp-card__btn:active svg {
+    fill: rgb(55, 0, 255);
+  }
+}
+.exp-card__btn svg {
+  width: 36px;
+  height: 23px;
+  rotate: z -7deg;
+  translate: 12px -3px;
+}
+
 .about-section {
   padding-top: 50px;
 }
@@ -739,6 +827,39 @@ body {
   }
   .about__aproach-title {
     margin-top: 0;
+  }
+}
+
+.experience {
+  --padding: 180px 0;
+  --title-margin: 90px;
+  padding: var(--padding);
+}
+.experience__title {
+  text-align: center;
+  margin-bottom: var(--title-margin);
+  font-size: clamp(40px, 4.1vw, 60px);
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+}
+@media screen and (max-width: 1024px) {
+  .experience {
+    --padding: 50px 0;
+    --title-margin: 40px;
+  }
+}
+.experience__cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 20px;
+}
+@media screen and (max-width: 1024px) {
+  .experience__cards {
+    gap: 50px;
   }
 }
 

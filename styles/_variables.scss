@@ -1,8 +1,11 @@
+@use 'sass:color';
+
+$white-color: #fff;
+$color-dark: #000;
 $main-bg-color: #678ff2;
+$alternate-bg-color: color.adjust($white-color, $alpha: -0.8);
 $main-font: 'Oswald', sans-serif;
 // $main-font: 'Noto Serif', serif;
 // $main-font: 'Doto', serif;
 $container-width: 1440px;
-$white-color: #fff;
 $border-divider: 1px solid $white-color;
-$color-dark: #000;
