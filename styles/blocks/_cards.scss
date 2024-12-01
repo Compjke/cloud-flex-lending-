@@ -123,7 +123,7 @@
 .wave-card {
 	width: 500px;
 	height: 275px;
-	background: url(/assets/wave_card_bg.svg) center/contain no-repeat;
+	background: url(../assets/wave_card_bg.svg) center/contain no-repeat;
 	@include mix.flex(column, start, start, nowrap, 0, 35px);
 
 	&__avatar {
@@ -140,7 +140,7 @@
 	@include media.mobile {
 		width: 330px;
 		row-gap: 15px;
-		background: url('/assets/wave_card_bg.svg') 50% 0 / contain no-repeat;
+		background: url('../assets/wave_card_bg.svg') 50% 0 / contain no-repeat;
 
 		&__quote {
 			@include mix.font(13px, 400, v.$white-color);
