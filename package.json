@@ -1,17 +1,17 @@
 {
-  "name": "cloud-flex",
-  "version": "1.0.0",
-  "description": "Simple landing page",
-  "source": "index.html",
-  "scripts": {
-    "sass:w": "sass --watch styles:css",
-    "parcel:watch": "parcel serve --dist-dir public",
-    "parcel:build": "parcel serve --dist-dir build --public-url ./"
-  },
-  "author": "Alex Suvorov",
-  "license": "ISC",
-  "devDependencies": {
-    "parcel": "^2.13.2",
-    "sass": "^1.81.0"
-  }
+	"name": "cloud-flex",
+	"version": "1.0.0",
+	"description": "Simple landing page",
+	"source": "index.html",
+	"scripts": {
+		"sass:w": "sass --watch styles:styles",
+		"parcel:watch": "parcel serve --dist-dir public",
+		"parcel:build": "parcel serve --dist-dir build --public-url ./"
+	},
+	"author": "Alex Suvorov",
+	"license": "ISC",
+	"devDependencies": {
+		"parcel": "^2.13.2",
+		"sass": "^1.81.0"
+	}
 }
