@@ -6,7 +6,7 @@
 %cloud-template {
 	width: 50%;
 	height: 240px;
-	background: url('../../assets/img/cloud_alpha.png') center/contain no-repeat;
+	background: url('/assets/img/cloud_alpha.png') center/contain no-repeat;
 
 	@include media.mobile {
 		width: 60%;
