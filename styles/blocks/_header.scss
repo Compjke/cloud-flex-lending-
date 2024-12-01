@@ -89,5 +89,13 @@
 				}
 			}
 		}
+
+		@include media.mobile {
+			&__links,
+			.covid,
+			.globus {
+				display: none;
+			}
+		}
 	}
 }

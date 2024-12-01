@@ -1,0 +1,73 @@
+@use '../variables' as var;
+@use '../mixins' as mixin;
+@use '../media' as media;
+@use '../placeholders';
+
+.mobile-navigation {
+	@include media.mobile-above {
+		display: none;
+	}
+	&__toggler {
+		display: none;
+
+		&:checked + .mobile__nav {
+			translate: 0;
+		}
+	}
+
+	.mobile__nav {
+		color: var.$white-color;
+		font-size: 1.5rem;
+		transition: all 0.2s linear;
+		@include mixin.position(fixed, 20, 0);
+		background-color: rgba(0, 187, 216, 0.567);
+		backdrop-filter: blur(10px);
+		translate: 100% 0;
+
+		&-list {
+			@include mixin.flex(column, center, center, nowrap, 0, 15px);
+
+			@media (max-height: 300px) {
+				flex-direction: row;
+				column-gap: 10px;
+				flex-wrap: wrap;
+			}
+		}
+
+		&-item {
+		}
+		&-link {
+			text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+			position: relative;
+			&::after {
+				@extend %hover-el-link;
+			}
+		}
+	}
+	&__burger {
+		@include mixin.position(absolute, 13, -1, top, right, 10px, 20px);
+		&-icon {
+			width: 33px;
+			height: 22px;
+			stroke: var.$white-color;
+			cursor: pointer;
+			transition-duration: 0.3s;
+			@include mixin.hover {
+				stroke: rgba(0, 90, 180, 0.696);
+			}
+		}
+	}
+
+	&__close {
+		@include mixin.position(absolute, 13, -1, top, right, 0, 20px);
+		&-icon {
+			width: 20px;
+			aspect-ratio: 1;
+			stroke: var.$white-color;
+			cursor: pointer;
+			@include mixin.hover {
+				stroke: #00000072;
+			}
+		}
+	}
+}
