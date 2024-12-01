@@ -44,6 +44,43 @@
 				</nav>
 			</div>
 		</header>
+
+		<div class="mobile-navigation">
+			<label for="burger" class="mobile-navigation__burger">
+				<svg class="mobile-navigation__burger-icon" area-label="burger image">
+					<use href="./assets/icons/sprites.svg#burger-icon"></use>
+				</svg>
+			</label>
+			<input type="checkbox" id="burger" class="mobile-navigation__toggler" />
+			<nav class="mobile-navigation__menu mobile__nav">
+				<ul class="mobile__nav-list">
+					<li class="mobile__nav-item">
+						<a href="#work" class="mobile__nav-link"> How we work </a>
+					</li>
+					<li class="mobile__nav-item">
+						<a href="#about" class="mobile__nav-link">About</a>
+					</li>
+					<li class="mobile__nav-item">
+						<a href="#experience" class="mobile__nav-link">Experience</a>
+					</li>
+					<li class="mobile__nav-item">
+						<a href="#testimonials" class="mobile__nav-link">Testimonials</a>
+					</li>
+					<li class="mobile__nav-item">
+						<a href="#form" class="mobile__nav-link">Send us a message</a>
+					</li>
+					<li class="mobile__nav-item">
+						<a href="#contacts" class="mobile__nav-link">Contacts</a>
+					</li>
+				</ul>
+				<label for="burger" class="mobile-navigation__close">
+					<svg class="mobile-navigation__close-icon" area-label="cross image">
+						<use href="./assets/icons/sprites.svg#cross-icon"></use>
+					</svg>
+				</label>
+			</nav>
+		</div>
+
 		<main aria-label="main content">
 			<section class="hero-section" aria-label="hero section">
 				<div class="container">
@@ -77,7 +114,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="work-section" aria-label="work section">
+			<section class="work-section" id="work" aria-label="work section">
 				<div class="container">
 					<div class="work">
 						<h2 class="work__title">How we work</h2>
@@ -151,7 +188,7 @@
 			</section>
 			<hr class="divider" />
 
-			<section class="about-section" aria-label="about section">
+			<section class="about-section" id="about" aria-label="about section">
 				<div class="container">
 					<div class="about">
 						<div class="about__quality">
@@ -196,7 +233,11 @@
 			</section>
 			<hr class="divider" />
 
-			<section class="experience-section" class="experience-section">
+			<section
+				class="experience-section"
+				id="experience"
+				class="experience-section"
+			>
 				<div class="container">
 					<div class="experience">
 						<h2 class="experience__title">Our experience</h2>
@@ -248,7 +289,11 @@
 				</div>
 			</section>
 
-			<section class="testimonials-section" aria-label="testimonials section">
+			<section
+				class="testimonials-section"
+				id="testimonials"
+				aria-label="testimonials section"
+			>
 				<div class="container">
 					<div class="testimonials">
 						<h2 class="testimonials__title">Testimonials</h2>
@@ -298,7 +343,7 @@
 				</div>
 			</section>
 
-			<section class="form-section" area-label="form section">
+			<section class="form-section" id="form" area-label="form section">
 				<div class="container">
 					<div class="form-section-wrapper">
 						<form class="form">
@@ -336,7 +381,7 @@
 			</section>
 		</main>
 
-		<footer class="contacts-setion" area-label="contacts section">
+		<footer id="contacts" class="contacts-setion" area-label="contacts section">
 			<div class="container">
 				<div class="contacts">
 					<div class="contacts__terms">
@@ -348,31 +393,39 @@
 							© CloudFlex 2024. All Rights Reserved.
 						</p>
 					</div>
-               <ul class="contacts__soc1al-list">
-                  <li class="contacts__soc1al-item">
-                     <a href="#" class="contacts__soc1al-link">
-                        <svg class="contacts__soc1al-icon">
-                           <use href="./assets/icons/sprites.svg#linkedin-icon"></use>
-                        </svg>
-                     </a>
-                  </li>
-                  <li class="contacts__soc1al-item">
-                     <a href="#" class="contacts__soc1al-link">
-                        <svg class="contacts__soc1al-icon">
-                           <use href="./assets/icons/sprites.svg#facebook-icon"></use>
-                        </svg>
-                     </a>
-                  </li>
-                  <li class="contacts__soc1al-item">
-                     <a href="#" class="contacts__soc1al-link">
-                        <svg class="contacts__soc1al-icon">
-                           <use href="./assets/icons/sprites.svg#instagram-icon"></use>
-                        </svg>
-                     </a>
-                  </li>
-               </ul>
+					<ul class="contacts__soc1al-list">
+						<li class="contacts__soc1al-item">
+							<a href="#" class="contacts__soc1al-link">
+								<svg class="contacts__soc1al-icon">
+									<use href="./assets/icons/sprites.svg#linkedin-icon"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="contacts__soc1al-item">
+							<a href="#" class="contacts__soc1al-link">
+								<svg class="contacts__soc1al-icon">
+									<use href="./assets/icons/sprites.svg#facebook-icon"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="contacts__soc1al-item">
+							<a href="#" class="contacts__soc1al-link">
+								<svg class="contacts__soc1al-icon">
+									<use href="./assets/icons/sprites.svg#instagram-icon"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</footer>
 	</body>
+
+	<!-- <script>
+		const toggler = document.querySelector('.mobile-navigation__toggler');
+
+		toggler.addEventListener('click', (e) => {
+			console.log(e.target.checked);
+		});
+	</script> -->
 </html>
