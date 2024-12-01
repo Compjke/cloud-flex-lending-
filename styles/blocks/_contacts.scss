@@ -1,0 +1,54 @@
+@use '../variables' as var;
+@use '../mixins' as mixin;
+@use '../media' as media;
+@use '../placeholders';
+.contacts-setion {
+	background-color: var.$footer-bg;
+}
+
+.contacts {
+	padding-block: 40px;
+	@include mixin.flex(row, space-between, center);
+	@include media.mobile-s {
+		@include mixin.flex(column-reverse, start, center, nowrap, 0, 15px);
+	}
+	color: var.$white-color;
+	&__terms {
+		@include mixin.flex(column, center, start, nowrap, 0, 5px);
+		@include media.mobile-s {
+			row-gap: 15px;
+		}
+		&-links {
+			@include mixin.flex(row, start, start, nowrap, 35px);
+			@include mixin.font(1.3rem);
+			a {
+				position: relative;
+				&::after {
+					@extend %hover-el-link;
+				}
+			}
+		}
+		&-rights {
+			@include mixin.font(0.9rem);
+		}
+	}
+
+	&__soc1al-list {
+		@include mixin.flex(row, start, start, nowrap, 40px);
+	}
+	&__soc1al-item {
+	}
+	&__soc1al-link {
+		@include mixin.flex(row, center, center, nowrap);
+	}
+	&__soc1al-icon {
+		width: 25px;
+		aspect-ratio: 1;
+		fill: var.$white-color;
+		transition-duration: 0.3s;
+		@include mixin.hover {
+			fill: rgba(231, 231, 231, 0.789);
+			scale: 1.3 1.2;
+		}
+	}
+}
